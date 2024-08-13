@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icono con Efectos</title>
+    <style>
+        .container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+
+        /* Estilo para la imagen 1 - centrada y estática */
+        .img1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 40px;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+
+        /* Estilo para la imagen2- efecto giratorio */
+        .img2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 120px;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        /* Efecto 1: Rotación */
+        .container.effect1:hover .img2 {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+
+        /* Efecto 2: Cambio de color de fondo */
+        .container.effect2:hover {
+            background-color: #F0F0F0;
+        }
+
+        /* Efecto 3: Escala de img1 */
+        .container.effect3:hover .img1 {
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+
+        /* Efecto 4: Oscurecimiento de img2 */
+        .container.effect4:hover .img2 {
+            filter: brightness(0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>PROPUESTA DE EFECTOS</h1>
+    <div class="container effect1">
+        <p>Efecto rotación 180°</p>
+        <img src="img2.png" class="img2" alt="Imagen Rotatoria">
+        <img src="img1.png" class="img1" alt="Imagen Estática">
+    </div>
+
+    <div class="container effect2">
+        <p>Cambio de color de fondo</p>
+        <img src="img2.png" class="img2" alt="Imagen Rotatoria">
+        <img src="img1.png" class="img1" alt="Imagen Estática">
+    </div>
+
+    <div class="container effect3">
+        <p>Escalado</p>
+        <img src="img2.png" class="img2" alt="Imagen Rotatoria">
+        <img src="img1.png" class="img1" alt="Imagen Estática">
+    </div>
+
+    <div class="container effect4">
+        <p>Oscurecimiento</p>
+        <img src="img2.png" class="img2" alt="Imagen Rotatoria">
+        <img src="img1.png" class="img1" alt="Imagen Estática">
+    </div>
+</body>
+</html>
